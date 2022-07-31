@@ -130,8 +130,8 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--options', default='Greedy')
-    parser.add_argument('--inp_folder', default='inp_folder')
-    parser.add_argument('--out_folder', default='out_folder')
+    parser.add_argument('--inp_image', default='inp_image')
+    parser.add_argument('--out_text', default='out_text')
     parser.add_argument('--temperature', default=1.)
     parser.add_argument('--top_k', default=0)
     parser.add_argument('--top_p', default=1.)
@@ -143,7 +143,7 @@ if __name__ == '__main__':
     transformer, tokenizer = load_model()
     cxr_validator_model = load_validator()
 
-    images = glob.glob(os.path.join(args.inp_folder, '*'))
+    images = [os.path.join(os.getcwd(),inp_image)]#glob.glob(os.path.join(args.inp_folder, '*'))
 
     for image in images:
 
@@ -175,5 +175,5 @@ if __name__ == '__main__':
         print(predicted_sentence)
 
         # Save report
-        with open(os.path.join(args.out_folder, os.path.basename(image).split('.')[0] + '.txt'), 'w') as f:
+        with open(os.path.join(os.getcwd(), args.out_text, os.path.basename(image).split('.')[0] + '.txt'), 'w') as f:
             f.write(predicted_sentence)
