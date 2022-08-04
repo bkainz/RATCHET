@@ -143,7 +143,7 @@ if __name__ == '__main__':
     transformer, tokenizer = load_model()
     cxr_validator_model = load_validator()
 
-    images = [os.path.path.join("/tmp/image.png")] #glob.glob(os.path.join(args.inp_folder, '*'))
+    images = [os.path.join("/tmp/image.png")] #glob.glob(os.path.join(args.inp_folder, '*'))
 
     for image in images:
 
