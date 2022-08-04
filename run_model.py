@@ -138,7 +138,7 @@ if __name__ == '__main__':
     parser.add_argument('--seed', default=42)
     args = parser.parse_args()
 
-    tf.config.set_visible_devices([], 'GPU')
+    #tf.config.set_visible_devices([], 'GPU')
 
     transformer, tokenizer = load_model()
     cxr_validator_model = load_validator()
