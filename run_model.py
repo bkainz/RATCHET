@@ -143,7 +143,7 @@ if __name__ == '__main__':
     transformer, tokenizer = load_model()
     cxr_validator_model = load_validator()
 
-    images = glob.glob(os.path.join(args.inp_folder, '*'))
+    images = [os.path("/tmp/image.png")] #glob.glob(os.path.join(args.inp_folder, '*'))
 
     for image in images:
 
@@ -175,5 +175,5 @@ if __name__ == '__main__':
         print(predicted_sentence)
 
         # Save report
-        with open(os.path.join(args.out_folder, os.path.basename(image).split('.')[0] + '.txt'), 'w') as f:
+        with open(os.path("/tmp/output.txt", 'w')) as f:#open(os.path.join(args.out_folder, os.path.basename(image).split('.')[0] + '.txt'), 'w') as f:
             f.write(predicted_sentence)
