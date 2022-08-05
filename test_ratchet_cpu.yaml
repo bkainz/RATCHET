@@ -18,7 +18,7 @@ spec:
 
   - name: basegenerator
     container:
-      image: sepp12345/biomediatest:basegenerator
+      image: biomediaicl/basegenerator:latest
       command: [sh, -c]
       args: ["echo 'hello biomedia' | tee /tmp/hello_world.txt"]
     outputs:
@@ -34,6 +34,6 @@ spec:
       - name: message
         path: /tmp/image.png
     container:
-      image: sepp12345/ratchet_argo:latest
+      image: biomediaicl/ratchet_argo:latest
       command: [python]
       args: ["/code/RATCHET/run_model.py"]
